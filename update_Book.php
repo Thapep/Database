@@ -23,7 +23,7 @@ if ($ISBN !== ''){
     $sql_search = $sql_search . 'ISBN = ' . $ISBN . ' and ';
 }
 
-
+// Pay attention to the escaping quotes. That's because we want to turn the input into a string!
 $title = $_POST['title'];
 if ($title !== ''){
     $sql_search = $sql_search . 'title = \'' . $title . '\' and ';
@@ -38,7 +38,7 @@ if ($numpages !== ''){
 }
 $pubName = $_POST['pubName'];
 if ($pubName !== ''){
-    $sql_search = $sql_search . 'pubName = ' . $pubName . ' and ';
+    $sql_search = $sql_search . 'pubName = \'' . $pubName . '\' and ';
 }
 if ($sql_search == ''){
     echo 'You have to fill at least one field to search for!';
@@ -52,7 +52,7 @@ if ($ISBN_new !== ''){
 }
 $title_new = $_POST['title_new'];
 if ($title_new !== ''){
-    $sql_replace = $sql_replace . 'title = ' . $title_new . ' and ';
+    $sql_replace = $sql_replace . 'title = \'' . $title_new . '\' and ';
 }
 $pubYear_new = $_POST['pubYear_new'];
 if ($pubYear_new !== ''){
@@ -82,15 +82,20 @@ SET ' . $sql_replace . '
 WHERE ' . $sql_search . ';
 ';
 
+
 if(!$result = $db->query($sql)){
     die('There was an error running the query [' . $db->error . ']');
 }
 
-while($row = $result->fetch_assoc()){
-    echo $row['title'] . '<br />';
-}
+echo 'All good!<br />';
 
-echo 'Affected Rows: ' . $result->affected_rows;
+// while($row = $result->fetch_assoc()){
+//     echo $row['pubYear'] . 'Bro<br />';
+// }
+
+
+
+//echo 'Affected Rows: ' . $result->affected_rows;
 
 
 ?>
