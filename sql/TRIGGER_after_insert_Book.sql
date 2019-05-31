@@ -1,14 +1,13 @@
-/* Creates a trigger that inserts a new copy in the 'copies' everytime a Book is added */
+/* 
+ * Creates a trigger that inserts a new copy in the 'copies' everytime a *new* Book is 
+ * added. The copyNr this triggers add is always 1, as it is only called upon inserting 
+ * a new book (not a new copy) in the database  
+*/
 DELIMITER $$
 CREATE TRIGGER after_insert_Book 
 AFTER INSERT ON Book
 FOR EACH ROW
 BEGIN
-    IF (SELECT copyNr FROM copies WHERE copies.ISBN=NEW.ISBN) = null THEN
-		INSERT INTO copies (ISBN, copyNr, shelf)
-		VALUES(NEW.ISBN, 1, null);
-    ELSE
-		INSERT INTO copies (ISBN, copyNr, shelf)
-		VALUES(NEW.ISBN, (SELECT copyNr FROM copies WHERE copies.ISBN=NEW.ISBN) + 1, null);
-	END IF;
+	INSERT INTO copies (ISBN, copyNr)
+	VALUES(NEW.ISBN, 1);
 END$$
