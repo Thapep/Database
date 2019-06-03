@@ -16,8 +16,9 @@ echo 'Succesfull Connection' . '<br />';
 $user_input =  $_POST['user_input'];
 
 $sql = '
-SELECT pubName as Publisher, COUNT(*) as '. $user_input .' FROM Book
-GROUP BY pubName;
+SELECT pubName as Publisher, COUNT(*) as Quantity FROM Book
+GROUP BY pubName
+HAVING pubName=\'' . $user_input . '\';
 ';
 
 if(!$result = $db->query($sql)){
@@ -27,5 +28,5 @@ if(!$result = $db->query($sql)){
 echo 'All good!<br />';
 
 while($row = $result->fetch_assoc()){
-    echo $row['title'] . ' ' . $row['ISBN'] . '<br />';
+    echo $row['Publisher'] . ' ' . $row['Quantity'] . '<br />';
 }
