@@ -29,5 +29,5 @@ if(!$result = $db->query($sql)){
 echo 'All good!<br />';
 
 while($row = $result->fetch_assoc()){
-    echo $row['title'] . ' ' . $row['ISBN'] . ' ' . $row['AFirst'] . ' ' . $row['ALast'] . '<br />';
+    echo $row['pubYear'] . ' ' . $row['title'] . ' ' . $row['ISBN'] . ' ' . $row['AFirst'] . ' ' . $row['ALast'] . '<br />';
 }
