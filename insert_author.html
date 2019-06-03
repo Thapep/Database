@@ -1,15 +1,72 @@
 <html>
-<head>
-Hello World!
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-<h2>INSERT</h2>
-<form action="insert_author.php" method='post'>
-    Insert new book in 'Book' table. You must fill all fields!<br />
-    authID: <input name='authID' type='text'><br />
-    AFirst: <input name='AFirst' type='text'><br />
-    ALast: <input name='ALast' type='text'><br />
-    Airthdate: <input name='Abirthdate' type='text'><br />
-    <input type='submit' placeholder='Go!'><br />
-</form>
+        <title>NTUA Library</title>
+        <link rel="stylesheet" href="css/main.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    </head>
+    <body>
+		<section class="main-container">
+            <article class="index-intro">				
+                <div class="container">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h2 class="text-white">National Technical Univeristy of Athens Library</h2>
+                            </div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <div class="container">
+            <h2>Author Insertion</h2>
+            <form class="form-horizontal" action="insert_author.php" method='post'>
+                Insert new Author! You must fill all fields!<br />
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="authID">Author ID:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="authID" placeholder="Enter Author ID">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="AFirst">First Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="AFirst" placeholder="Enter First Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="ALast">Last Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="ALast" placeholder="Enter Last Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label class="control-label col-sm-2" for="ABirthday">Birthday:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="ABirthday" placeholder="Enter Birthday">
+                        </div>
+                    </div>
+                <div>
+                <div>
+                    <div class="form-group">        
+                        <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>
