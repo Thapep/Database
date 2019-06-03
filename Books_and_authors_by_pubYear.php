@@ -16,7 +16,7 @@ echo 'Succesfull Connection' . '<br />';
 //$user_input =  $_POST['user_input'];
 
 $sql = '
-SELECT written_by.ISBN, Book.title, author.AFirst, author.ALast FROM written_by
+SELECT Book.pubYear, written_by.ISBN, Book.title, author.AFirst, author.ALast FROM written_by
 LEFT JOIN Book ON Book.ISBN=written_by.ISBN
 LEFT JOIN author ON author.authID=written_by.authID
 ORDER BY pubYear ASC;
