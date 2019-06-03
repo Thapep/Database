@@ -20,7 +20,8 @@ $numpages = $_POST['numpages'];
 $pubName = $_POST['pubName'];
 
 //Checking to see if given parameters are NULL (Shouldn't the "NOT NULL" in the database be enough?)
-if ($ISBN == NULL or $pubYear == NULL or $numpages == NULL or $title == NULL or $pubName == NULL){
+if ($ISBN == NULL or $pubYear == NULL or $numpages == NULL or '$title' == NULL or '$pubName' == NULL){
+    echo $ISBN . ' ' . $pubYear . ' ' . $numpages . ' '. $title . ' ' . $pubName . '<br />';
     die('Please fill all the fields');
 }
 
