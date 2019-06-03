@@ -33,5 +33,5 @@ if(!$result = $db->query($sql)){
 echo 'All good!<br />';
 
 while($row = $result->fetch_assoc()){
-    echo $row['title'] . ' ' . $row['ISBN'] . '<br />';
+    echo $row['ISBN'] . ' ' . $row['title'] . ' ' .$row['memberID'] . ' ' . $row['MFirst'] . ' ' .$row['MLast'] . ' ' . '<br />';
 }

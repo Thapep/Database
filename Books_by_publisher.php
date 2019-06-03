@@ -15,6 +15,8 @@ echo 'Succesfull Connection' . '<br />';
 
 $user_input =  $_POST['user_input'];
 
+
+//DANGER!!! INJECTION ATTACK VULNERABILITY
 $sql = '
 SELECT pubName as Publisher, COUNT(*) as Quantity FROM Book
 GROUP BY pubName
