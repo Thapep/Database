@@ -16,7 +16,7 @@ echo 'Succesfull Connection' . '<br />';
 //$user_input =  $_POST['user_input'];
 
 $sql = '
-SELECT written_by.ISBN Book.title author.AFirst author.ALast FROM written_by
+SELECT written_by.ISBN, Book.title, author.AFirst, author.ALast FROM written_by
 LEFT JOIN Book ON Book.ISBN=written_by.ISBN
 LEFT JOIN author ON author.authID=written_by.authID
 ORDER BY pubYear ASC;
@@ -29,5 +29,5 @@ if(!$result = $db->query($sql)){
 echo 'All good!<br />';
 
 while($row = $result->fetch_assoc()){
-    echo $row['title'] . ' ' . $row['ISBN'] . '<br />';
+    echo $row['title'] . ' ' . $row['ISBN'] . ' ' . $row['AFirst'] . ' ' . $row['ALast'] . '<br />';
 }
