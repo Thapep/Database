@@ -32,6 +32,45 @@
         </section>
 
         <div class="container">
+
+                <!-- Basic vertical menu -->
+                <ul class="nav nav-pills">
+                  <li class="active"><a href="index.html">Home</a></li>
+                
+                  <!-- Add drop down menu -->
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Books
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="insert_Book.html">Insert Book</a></li>
+                      <li><a href="delete_Book.html">Delete Book</a></li>
+                      <li><a href="update_Book.html">Update Book</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Members
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="insert_member.html">Insert Member</a></li>
+                        <li><a href="delete_member.html">Delete Member</a></li>
+                        <li><a href="update_member.html">Update Member</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Authors
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="insert_author.html">Insert Author</a></li>
+                          <li><a href="delete_author.html">Delete Author</a></li>
+                          <li><a href="update_author.html">Update Author</a></li>
+                        </ul>
+                      </li>
+                    <li><a href="search_Book.html">Search</a></li>
+                    <li><a href="queries_menu.html">Go to Queries Menu</a></li>
+                </ul>
+            </div>
+
+        <div class="container">
             <h2>Member Deletion</h2>
             <form class="form-horizontal" action="delete_member.php" method='post'>
                 Insert any number of criteria to find the member or members you wish to delete:<br />
