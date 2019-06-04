@@ -35,7 +35,7 @@ CREATE TABLE `permanent_employee` (
 
 LOCK TABLES `permanent_employee` WRITE;
 /*!40000 ALTER TABLE `permanent_employee` DISABLE KEYS */;
-INSERT INTO `permanent_employee` VALUES (0,'1980-01-01');
+INSERT INTO `permanent_employee` VALUES (1,'1980-01-01'),(5,'1996-09-23'),(7,'2001-03-05'),(8,'2006-11-30'),(10,'2015-01-09');
 /*!40000 ALTER TABLE `permanent_employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

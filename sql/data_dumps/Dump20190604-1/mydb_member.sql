@@ -39,7 +39,7 @@ CREATE TABLE `member` (
 
 LOCK TABLES `member` WRITE;
 /*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES (1,'Thrasyvoulos','Iliadis','Alekou Panagoulh',0,18452),(2,'Peppas','Athanasios','NTUA',0,17422),(3,'Koustas','Konstantinos','kapou zwgrafou otan de menei stou peppa',0,17426);
+INSERT INTO `member` VALUES (1,'Thrasyvoulos','Iliadis','Alekou Panagoulh',0,18452),(2,'Athanasios','Peppas','NTUA',0,17422),(3,'Konstantinos','Koustas','kapou zwgrafou otan de menei stou peppa',0,17426),(4,'Periklis','Chinaris','Theologou',7,13555),(5,'Leuteris','Kontodinas','Peloponnisou',19,64313);
 /*!40000 ALTER TABLE `member` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

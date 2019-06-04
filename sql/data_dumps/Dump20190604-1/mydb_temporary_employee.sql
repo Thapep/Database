@@ -34,7 +34,7 @@ CREATE TABLE `temporary_employee` (
 
 LOCK TABLES `temporary_employee` WRITE;
 /*!40000 ALTER TABLE `temporary_employee` DISABLE KEYS */;
-INSERT INTO `temporary_employee` VALUES (2,'6912345678'),(1,'6912345678'),(1,'6912345678'),(1,'6912345678');
+INSERT INTO `temporary_employee` VALUES (2,'6912345671'),(3,'6912345672'),(4,'6912345673'),(6,'6912345674'),(9,'6932435465');
 /*!40000 ALTER TABLE `temporary_employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

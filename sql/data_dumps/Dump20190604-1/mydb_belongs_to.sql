@@ -38,7 +38,7 @@ CREATE TABLE `belongs_to` (
 
 LOCK TABLES `belongs_to` WRITE;
 /*!40000 ALTER TABLE `belongs_to` DISABLE KEYS */;
-INSERT INTO `belongs_to` VALUES (38,'Classic'),(1234,'Political Science'),(1237,'Political Science');
+INSERT INTO `belongs_to` VALUES (38,'Classic'),(1234,'Political Science'),(1237,'Political Science'),(348,'Science Fiction'),(6799,'Literature');
 /*!40000 ALTER TABLE `belongs_to` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

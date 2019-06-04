@@ -38,7 +38,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'Mixalhs','Rakintzhs',1200,'perm'),(2,'Giwrgos','Mazwnakhs',1200,'temp');
+INSERT INTO `employee` VALUES (1,'Mixalhs','Rakintzhs',1200,'perm'),(2,'Giwrgos','Mazwnakhs',1200,'temp'),(3,'Makis','Dimakis',1100,'temp'),(4,'Despoina','Vandi',1100,'temp'),(5,'Elena','Paparizou',1200,'perm'),(6,'Leuteris','Pantazis',1200,'temp'),(7,'Giorgos','Margaritis',1300,'perm'),(8,'Katerina','Stikoudi',1200,'perm'),(9,'Vasilis','Karras',1100,'temp'),(10,'Giota','Negka',1200,'perm');                                    
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
