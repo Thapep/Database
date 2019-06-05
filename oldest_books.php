@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,11 +32,11 @@
         </article>
     </section>
 
-  <div class="container">
+    <div class="container">
 
       <!-- Basic vertical menu -->
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#">Home</a></li>
+      <ul class="nav nav-pills">
+        <li class="active"><a href="index.html">Home</a></li>
       
         <!-- Add drop down menu -->
         <li class="dropdown">
@@ -80,5 +78,29 @@
           <li><a href="queries_menu.html">Go to Queries Menu</a></li>
 
       </ul>
-  </body>
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "hmysqlg@m31";
+    $dbname = "mydb";
+
+
+    $db = new mysqli($servername, $username, $password, $dbname);
+    
+    if($db->connect_errno > 0){
+        die('Unable to connect to database [' . $db->connect_error . ']');
+    }
+
+    $sql = '
+        SELECT * FROM oldest_books_10;
+    ';
+
+    if(!$result = $db->query($sql)){
+    die('There was an error running the query [' . $db->error . ']');
+}
+    while($row = $result->fetch_assoc()){
+        echo $row['ISBN'] . ' ' . $row['title'] . ' ' . $row['AFirst'] . ' ' . $row['ALast'] . '<br />';
+    }
+?>
+</body>
 </html>
