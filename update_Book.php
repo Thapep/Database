@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "SelectedAgainst";
+$password = "hmysqlg@m31";
 $dbname = "mydb";
 
 echo 'Hello World!' . '<br />';
@@ -48,33 +48,33 @@ $sql_search = substr($sql_search, 0, -5);
 
 $ISBN_new = $_POST['ISBN_new'];
 if ($ISBN_new !== ''){
-    $sql_replace = $sql_replace . 'ISBN = ' . $ISBN_new . ' and ';
+    $sql_replace = $sql_replace . 'ISBN = ' . $ISBN_new . ', ';
 }
 $title_new = $_POST['title_new'];
 if ($title_new !== ''){
-    $sql_replace = $sql_replace . 'title = \'' . $title_new . '\' and ';
+    $sql_replace = $sql_replace . 'title = \'' . $title_new . '\', ';
 }
 $pubYear_new = $_POST['pubYear_new'];
 if ($pubYear_new !== ''){
-    $sql_replace = $sql_replace . 'pubYear = ' . $pubYear_new . ' and ';
+    $sql_replace = $sql_replace . 'pubYear = ' . $pubYear_new . ', ';
 }
 $numpages_new = $_POST['numpages_new'];
 if ($numpages_new !== ''){
-    $sql_replace = $sql_replace . 'numpages = ' . $numpages_new . ' and ';
+    $sql_replace = $sql_replace . 'numpages = ' . $numpages_new . ', ';
 }
 $pubName_new = $_POST['pubName_new'];
 if ($pubName_new !== ''){
-    $sql_replace = $sql_replace . 'pubName = \'' . $pubName_new . '\' and ';
+    $sql_replace = $sql_replace . 'pubName = \'' . $pubName_new . '\', ';
 }
 
 if ($sql_replace == ''){
     echo 'You have to fill at least one field to change!';
     die();
 }
-$sql_replace = substr($sql_replace, 0, -5);
+$sql_replace = substr($sql_replace, 0, -2);
 
 
-echo $sql_search . '<br />' . $sql_replace . '<br />';
+//echo $sql_search . '<br />' . $sql_replace . '<br />';
 
 $sql = '
 UPDATE Book
@@ -82,6 +82,7 @@ SET ' . $sql_replace . '
 WHERE ' . $sql_search . ';
 ';
 
+//echo 'THE STATEMENT: ' . $sql . '<br />';
 
 if(!$result = $db->query($sql)){
     die('There was an error running the query [' . $db->error . ']');
@@ -90,12 +91,13 @@ if(!$result = $db->query($sql)){
 echo 'All good!<br />';
 
 // while($row = $result->fetch_assoc()){
+
 //     echo $row['pubYear'] . 'Bro<br />';
 // }
 
 
 
-//echo 'Affected Rows: ' . $result->affected_rows;
+echo 'Affected Rows: ' . $result->affected_rows;
 
 
 ?>

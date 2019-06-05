@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "SelectedAgainst";
+$password = "hmysqlg@m31";
 $dbname = "mydb";
 
 echo 'Hello World!' . '<br />';
@@ -19,15 +19,20 @@ $pubYear = $_POST['pubYear'];
 $numpages = $_POST['numpages'];
 $pubName = $_POST['pubName'];
 
+$authID = $_POST['authID'];
+
 //Checking to see if given parameters are NULL (Shouldn't the "NOT NULL" in the database be enough?)
-if ($ISBN == NULL or $pubYear == NULL or $numpages == NULL or '$title' == NULL or '$pubName' == NULL){
-    echo $ISBN . ' ' . $pubYear . ' ' . $numpages . ' '. $title . ' ' . $pubName . '<br />';
+if ($ISBN == NULL or $pubYear == NULL or $numpages == NULL or '$title' == NULL or '$pubName' == NULL or $authID == NULL){
+    echo $ISBN . ' ' . $pubYear . ' ' . $numpages . ' '. $title . ' ' . $pubName . ' ' . $authID .'<br />';
     die('Please fill all the fields');
 }
 
 $sql = <<<SQL
     INSERT INTO Book (ISBN, title, pubYear, numpages, pubName)
     VALUES($ISBN, '$title', $pubYear, $numpages, '$pubName');
+
+    INSERT INTO written_by (ISBN, authID)
+    VALUES($ISBN, $authID)
 SQL;
 
 if(!$result = $db->query($sql)){

@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "SelectedAgainst";
+$password = "hmysqlg@m31";
 $dbname = "mydb";
 
 $db = new mysqli($servername, $username, $password, $dbname);
@@ -50,43 +50,45 @@ $sql_search = substr($sql_search, 0, -5);
 
 $memberID_new = $_POST['memberID_new'];
 if ($memberID_new !== ''){
-    $sql_replace = $sql_replace . 'memberID = ' . $memberID_new . ' and ';
+    $sql_replace = $sql_replace . 'memberID = ' . $memberID_new . ', ';
 }
 $MFirst_new = $_POST['MFirst_new'];
 if ($MFirst_new !== ''){
-    $sql_replace = $sql_replace . 'MFirst = \'' . $MFirst_new . '\' and ';
+    $sql_replace = $sql_replace . 'MFirst = \'' . $MFirst_new . '\', ';
 }
 $MLast_new = $_POST['MLast_new'];
 if ($MLast_new !== ''){
-    $sql_replace = $sql_replace . 'MLast = \'' . $MLast_new . '\' and ';
+    $sql_replace = $sql_replace . 'MLast = \'' . $MLast_new . '\', ';
 }
 $Street_new = $_POST['Street_new'];
 if ($Street_new !== ''){
-    $sql_replace = $sql_replace . 'Street = \'' . $Street_new . '\' and ';
+    $sql_replace = $sql_replace . 'Street = \'' . $Street_new . '\', ';
 }
 $st_number_new = $_POST['st_number_new'];
 if ($st_number_new !== ''){
-    $sql_replace = $sql_replace . 'st_number = ' . $st_number_new . ' and ';
+    $sql_replace = $sql_replace . 'st_number = ' . $st_number_new . ', ';
 }
 $postalCode_new = $_POST['postalCode_new'];
 if ($postalCode_new !== ''){
-    $sql_replace = $sql_replace . 'postalCode = ' . $postalCode_new . ' and ';
+    $sql_replace = $sql_replace . 'postalCode = ' . $postalCode_new . ', ';
 }
 
 if ($sql_replace == ''){
     echo 'You have to fill at least one field to change!';
     die();
 }
-$sql_replace = substr($sql_replace, 0, -5);
+$sql_replace = substr($sql_replace, 0, -2);
 
 
-echo $sql_search . '<br />' . $sql_replace . '<br />';
+//echo $sql_search . '<br />' . $sql_replace . '<br />';
 
 $sql = '
 UPDATE member
 SET ' . $sql_replace . '
 WHERE ' . $sql_search . ';
 ';
+
+//echo "STATEMENT IS: " . $sql . "<br />";
 
 
 if(!$result = $db->query($sql)){

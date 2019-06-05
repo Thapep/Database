@@ -13,16 +13,16 @@ $memberID = $_POST['memberID'];
 $MFirst = $_POST['MFirst'];
 $MLast = $_POST['MLast'];
 $Street = $_POST['Street'];
-$number = $_POST['number'];
+$st_number = $_POST['st_number'];
 $postalCode = $_POST['postalCode'];
 //Checking to see if given parameters are NULL (Shouldn't the "NOT NULL" in the database be enough?)
-if ($memberID == NULL or $MFirst == NULL or $MLast == NULL or $Street == NULL or $number == NULL or $postalCode == NULL){
+if ($memberID == NULL or $MFirst == NULL or $MLast == NULL or $Street == NULL or $st_number == NULL or $postalCode == NULL){
     die('Please fill all the fields');
 }
-//number may be something on php. Change on database.
+//st_number may be something on php. Change on database.
 $sql = <<<SQL
-    INSERT INTO member (memberID, MFirst, MLast, Street, number, postalCode)
-    VALUES($memberID, '$MFirst','$MLast', '$Street', $number, $postalCode);
+    INSERT INTO member (memberID, MFirst, MLast, Street, st_number, postalCode)
+    VALUES($memberID, '$MFirst','$MLast', '$Street', $st_number, $postalCode);
 SQL;
 if(!$result = $db->query($sql)){
     die('There was an error running the query [' . $db->error . ']');

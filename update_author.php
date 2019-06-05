@@ -1,10 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "SelectedAgainst";
+$password = "hmysqlg@m31";
 $dbname = "mydb";
-
-echo 'Hello World!' . '<br />';
 
 $db = new mysqli($servername, $username, $password, $dbname);
 
@@ -44,34 +42,36 @@ $sql_search = substr($sql_search, 0, -5);
 
 $authID_new = $_POST['authID_new'];
 if ($authID_new !== ''){
-    $sql_replace = $sql_replace . 'authID = ' . $authID_new . ' and ';
+    $sql_replace = $sql_replace . 'authID = ' . $authID_new . ', ';
 }
 $AFirst_new = $_POST['AFirst_new'];
 if ($AFirst_new !== ''){
-    $sql_replace = $sql_replace . 'AFirst = \'' . $AFirst_new . '\' and ';
+    $sql_replace = $sql_replace . 'AFirst = \'' . $AFirst_new . '\', ';
 }
 $ALast_new = $_POST['ALast_new'];
 if ($ALast_new !== ''){
-    $sql_replace = $sql_replace . 'ALast = \'' . $ALast_new . '\' and ';
+    $sql_replace = $sql_replace . 'ALast = \'' . $ALast_new . '\', ';
 }
 $Abirthdate_new = $_POST['Abirthdate_new'];
 if ($Abirthdate_new !== ''){
-    $sql_replace = $sql_replace . 'Abirthdate = ' . $Abirthdate_new . ' and ';
+    $sql_replace = $sql_replace . 'Abirthdate = ' . $Abirthdate_new . ', ';
 }
 if ($sql_replace == ''){
     echo 'You have to fill at least one field to change!';
     die();
 }
-$sql_replace = substr($sql_replace, 0, -5);
+$sql_replace = substr($sql_replace, 0, -2);
 
 
-echo $sql_search . '<br />' . $sql_replace . '<br />';
+// echo $sql_search . '<br />' . $sql_replace . '<br />';
 
 $sql = '
 UPDATE author
 SET ' . $sql_replace . '
 WHERE ' . $sql_search . ';
 ';
+
+// echo "STATEMENT: " . $sql . '<br />';
 
 
 if(!$result = $db->query($sql)){
