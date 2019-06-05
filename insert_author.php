@@ -8,7 +8,7 @@ if($db->connect_errno > 0){
     die('Unable to connect to database [' . $db->connect_error . ']');
 }
 echo 'Succesfull Connection' . '<br />';
-$authID = $_POST['authId'];
+$authID = $_POST['authID'];
 $AFirst = $_POST['AFirst'];
 $ALast = $_POST['ALast'];
 $Abirthdate = $_POST['Abirthdate'];

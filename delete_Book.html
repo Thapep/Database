@@ -5,7 +5,9 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1">
 
         <title>NTUA Library</title>
+        
         <link rel="stylesheet" href="css/main.css">
+        <script src="js/delete_Book.js"></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -72,45 +74,45 @@
 
         <div class="container">
             <h2>Book Deletion</h2>
-            <form class="form-horizontal" action="delete_Book.php" method='post'>
+            <form class="form-horizontal" method='post'>
                     Insert any number of criteria to find the book or books you wish to delete<br />
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="ISBN">ISBN:</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="ISBN" placeholder="Enter ISBN">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="ISBN">ISBN:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="ISBN"  id="ISBN" placeholder="Enter ISBN">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="title">Title:</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="title" placeholder="Enter Title">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="title">Title:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="pubYear">Publish Year:</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="pubYear" placeholder="Enter Publish Year">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pubYear">Publish Year:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="pubYear" id="pubYear" placeholder="Enter Publish Year">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="pubName">Publisher Name:</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="pubName" placeholder="Enter Publisher Name">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="numpages">Pages Number:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="numpages" id="numpages" placeholder="Enter Pages Number:">
+                        </div>
                     </div>
-                </div>
-                <!--ISBN: <input name='ISBN' type='text'><br />
-                title: <input name='title' type='text'><br />
-                pubYear: <input name='pubYear' type='text'><br />
-                numpages: <input name='numpages' type='text'><br />
-                pubName: <input name='pubName' type='text'><br />-->
-                <div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pubName">Publisher Name:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="pubName" id="pubName" placeholder="Enter Publisher Name">
+                        </div>
+                    </div>
                     <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="btn btn-default" onclick="result()">Submit</button>
+                        </div>
                     </div>
-                    <!--<input type='submit' placeholder='Go!'><br />-->
-                </div>
-            </form>
+                </form>
+                <div id="results"></div>
         </div>
     </body>
 </html>

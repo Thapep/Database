@@ -39,9 +39,9 @@ $Street = $_POST['Street'];
 if ($Street !== ''){
     $sql_delete = $sql_delete . 'Street = \'' . $Street . '\' and ';
 }
-$st_number = $_POST['st_number'];
-if ($st_number !== ''){
-    $sql_delete = $sql_delete . 'st_number = ' . $st_number . ' and ';
+$number = $_POST['number'];
+if ($number !== ''){
+    $sql_delete = $sql_delete . 'number = ' . $number . ' and ';
 }
 $postalCode = $_POST['postalCode'];
 if ($postalCode !== ''){

@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/main.css">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
+        <script src="js/search_Book.js"></script>
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         
@@ -16,38 +16,78 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
     </head>
     <body>
-		<section class="main-container">
-            <article class="index-intro">				
-                <div class="container">
-                    <div class="jumbotron">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <h2 class="text-white">National Techical University of Athens Library</h2>
-                            </div>
-                            <div class="col-sm-4"></div>
-                        </div>
-                    </div>
+		  <section class="main-container">
+        <article class="index-intro">				
+          <div class="container">
+            <div class="jumbotron">
+              <div class="row">
+                <div class="col-sm-4">
+                  <h2 class="text-white">National Techical University of Athens Library</h2>
                 </div>
-            </article>
-        </section>
+                <div class="col-sm-4"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
 
         <div class="container">
+
+            <!-- Basic vertical menu -->
+            <ul class="nav nav-pills">
+              <li class="active"><a href="index.html">Home</a></li>
+            
+              <!-- Add drop down menu -->
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Books
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="insert_Book.html">Insert Book</a></li>
+                  <li><a href="delete_Book.html">Delete Book</a></li>
+                  <li><a href="update_Book.html">Update Book</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Members
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="insert_member.html">Insert Member</a></li>
+                    <li><a href="delete_member.html">Delete Member</a></li>
+                    <li><a href="update_member.html">Update Member</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Authors
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="insert_author.html">Insert Author</a></li>
+                      <li><a href="delete_author.html">Delete Author</a></li>
+                      <li><a href="update_author.html">Update Author</a></li>
+                    </ul>
+                  </li>
+                <li><a href="search_Book.html">Search</a></li>
+                <li><a href="queries_menu.html">Go to Queries Menu</a></li>
+            </ul>
+        </div>
+        <div class="container">
             <h2>Search Book</h2>
-            <form class="form-horizontal" action="search_Book.php" method='post'>
+            <form id="myform" class="form-horizontal" method='post'>
                 Insert the title or a keyword to find the book that you want<br />
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="title">Title or Keyword:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="title" placeholder="Enter Title ot Keyword">
+                      <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title or Keyword">
                     </div>
                 </div>
                 <div>
                     <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default" onclick="result()">Submit</button>
                     </div>
                 </div>
             </form>
+        </div>
+        <div id="results">
         </div>
     </body>
 </html>

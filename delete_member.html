@@ -5,6 +5,7 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1">
 
         <title>NTUA Library</title>
+        <script src="js/delete_member.js"></script>
         <link rel="stylesheet" href="css/main.css">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -72,51 +73,52 @@
 
         <div class="container">
             <h2>Member Deletion</h2>
-            <form class="form-horizontal" action="delete_member.php" method='post'>
+            <form id="myform" class="form-horizontal" method='post'>
                 Insert any number of criteria to find the member or members you wish to delete:<br />
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="memberID">Member ID:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="memberID" placeholder="Enter Member ID">
+                      <input type="text" class="form-control" name="memberID" id="memberID" placeholder="Enter Member ID">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="MFirst">First Name:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="MFirst" placeholder="Enter First Name">
+                      <input type="text" class="form-control" name="MFirst" id="MFirst" placeholder="Enter First Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="MLast">Last Name:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="MLast" placeholder="Enter Last Name">
+                      <input type="text" class="form-control" name="MLast" id="MLast" placeholder="Enter Last Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="Street">Street:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="Street" placeholder="Enter Street:">
+                      <input type="text" class="form-control" name="Street" id="Street" placeholder="Enter Street:">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="number">Number of Street:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="number" placeholder="Enter Number of Street">
+                      <input type="text" class="form-control" name="number" id="number" placeholder="Enter Number of Street">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="postalCode">Postal Code:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="postalCode" placeholder="Enter Postal Code">
+                      <input type="text" class="form-control" name="postalCode" id="postalCode" placeholder="Enter Postal Code">
                     </div>
                 </div>
                 <div>
                     <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default" onclick="result()">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
+        <div id="results"></div>
     </body>
 </html>
