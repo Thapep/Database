@@ -1,10 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "SelectedAgainst";
+$password = "hmysqlg@m31";
 $dbname = "mydb";
-
-echo 'Hello World!' . '<br />';
 
 $db = new mysqli($servername, $username, $password, $dbname);
 
