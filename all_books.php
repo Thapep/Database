@@ -73,7 +73,7 @@
             <li><a href="oldest_books.php">Oldest Books</a></li>
             <li><a href="members_names.php">Members Names</a></li>
             <li><a href="author_list.php">Author List</a></li>
-                  <li><a href="all_books.php">All Books</a></li>
+            <li><a href="all_books.php">All Books</a></li>
           </ul>
       </li>
     <li><a href="search_Book.html">Search</a></li>
@@ -91,10 +91,9 @@ $db = new mysqli($servername, $username, $password, $dbname);
 if($db->connect_errno > 0){
     die('Unable to connect to database [' . $db->connect_error . ']');
 }
-echo 'Succesfull Connection' . '<br />';
 
 $sql = '
-SELECT AFirst, ALast FROM author_list
+SELECT * FROM all_books
 ';
 
 if(!$result = $db->query($sql)){
@@ -103,23 +102,25 @@ if(!$result = $db->query($sql)){
 $i++;
 ?>
 <div class="container"> 
-    <h2>Authors</h2>         
+    <h2>Books</h2>         
     <table class="table table-condensed">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Title</th> 
-                <th>Author First Name</th>
-                <th>Author Last Name</th>
+                <th>ISBN</th> 
+                <th>Title</th>
+                <th>Publication Year</th>
+                <th>Publisher</th>
             </tr>
         </thead>
         <?php while($row = $result->fetch_assoc()){?>
             <tbody>
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row['memberID']?></td>
-                    <td><?php echo $row['AFirst']?></td>
-                    <td><?php echo $row['ALast']?></td>
+                    <td><?php echo $row['ISBN']?></td>
+                    <td><?php echo $row['Title']?></td>
+                    <td><?php echo $row['Publication Year']?></td>
+                    <td><?php echo $row['Publisher']?></td>
                 </tr>
             </tbody>
             <?php $i++;}?>

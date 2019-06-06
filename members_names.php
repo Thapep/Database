@@ -72,6 +72,8 @@
           <ul class="dropdown-menu">
             <li><a href="oldest_books.php">Oldest Books</a></li>
             <li><a href="members_names.php">Members Names</a></li>
+            <li><a href="author_list.php">Author List</a></li>
+            <li><a href="all_books.php">All Books</a></li>
           </ul>
       </li>
     <li><a href="search_Book.html">Search</a></li>
@@ -101,7 +103,7 @@
     $i=1;
     ?>
     <div class="container"> 
-        <h2>Results</h2>         
+        <h2>Members</h2>         
         <table class="table table-condensed">
             <thead>
                 <tr>
