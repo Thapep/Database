@@ -4,8 +4,6 @@ $username = "root";
 $password = "hmysqlg@m31";
 $dbname = "mydb";
 
-echo 'Hello World!' . '<br />';
-
 $db = new mysqli($servername, $username, $password, $dbname);
 
 if($db->connect_errno > 0){
