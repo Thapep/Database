@@ -96,11 +96,32 @@
     ';
 
     if(!$result = $db->query($sql)){
-    die('There was an error running the query [' . $db->error . ']');
-}
-    while($row = $result->fetch_assoc()){ 
-        echo $row['memberID'] . ' ' . $row['MFirst'] . ' ' . $row['MLast'] . '<br />';
+      die('There was an error running the query [' . $db->error . ']');
     }
-?>
+    $i=1;
+    ?>
+    <div class="container"> 
+        <h2>Results</h2>         
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th> 
+                    <th>Member First Name</th>
+                    <th>Member Last Name</th>
+                </tr>
+            </thead>
+            <?php while($row = $result->fetch_assoc()){?>
+                <tbody>
+                    <tr>
+                        <td><?php echo $i ?></td>
+                        <td><?php echo $row['memberID']?></td>
+                        <td><?php echo $row['MFirst']?></td>
+                        <td><?php echo $row['MLast']?></td>
+                    </tr>
+                </tbody>
+                <?php $i++;}?>
+        </table>
+    </div>
 </body>
 </html>

@@ -96,11 +96,34 @@
     ';
 
     if(!$result = $db->query($sql)){
-    die('There was an error running the query [' . $db->error . ']');
-}
-    while($row = $result->fetch_assoc()){
-        echo $row['ISBN'] . ' ' . $row['title'] . ' ' . $row['AFirst'] . ' ' . $row['ALast'] . '<br />';
+      die('There was an error running the query [' . $db->error . ']');
     }
-?>
+    $i=1;
+            ?>
+            <div class="container"> 
+                <h2>Results</h2>         
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Publish Year</th>
+                            <th>Author First Name</th>
+                            <th>Author Last Name</th>
+                        </tr>
+                    </thead>
+                    <?php while($row = $result->fetch_assoc()){?>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $i ?></td>
+                                <td><?php echo $row['title']?></td>
+                                <td><?php echo $row['pubYear']?></td>
+                                <td><?php echo $row['AFirst']?></td>
+                                <td><?php echo $row['ALast']?></td>
+                            </tr>
+                        </tbody>
+                        <?php $i++;}?>
+                </table>
+            </div>
 </body>
 </html>
