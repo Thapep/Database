@@ -1,17 +1,17 @@
+<html>
+<body>
+
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "hmysqlg@m31";
 $dbname = "mydb";
 
-echo 'Hello World!' . '<br />';
-
 $db = new mysqli($servername, $username, $password, $dbname);
 
 if($db->connect_errno > 0){
     die('Unable to connect to database [' . $db->connect_error . ']');
 }
-echo 'Succesfull Connection' . '<br />';
 
 //Choose how you will delete elements from the database (e.g. type = 'ISBN', so you delete based on ISBN)
 $type = $_POST['type'];
@@ -59,6 +59,12 @@ if(!$result = $db->query($sql)){
     die('There was an error running the query [' . $db->error . ']');
 }
 
-echo 'Total rows updated: ' . $db->affected_rows;
-
 ?>
+
+<script>
+    alert("Succesfull Delete");
+    window.location = 'delete_Book.html';
+</script>
+
+</body>
+</html>

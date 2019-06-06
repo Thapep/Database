@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -9,7 +11,6 @@ $db = new mysqli($servername, $username, $password, $dbname);
 if($db->connect_errno > 0){
     die('Unable to connect to database [' . $db->connect_error . ']');
 }
-echo 'Succesfull Connection' . '<br />';
 
 //Choose how you will delete elements from the database (e.g. type = 'ISBN', so you delete based on ISBN)
 $type = $_POST['type'];
@@ -51,5 +52,10 @@ WHERE ' . $sql_delete . ';
 if(!$result = $db->query($sql)){
     die('There was an error running the query [' . $db->error . ']');
 }
-
 ?>
+<script>
+    alert("Succesfull Delete");
+    window.location = 'delete_author.html';
+</script>
+</body>
+</html>

@@ -1,13 +1,16 @@
+<html>
+<body>
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "hmysqlg@m31";
 $dbname = "mydb";
 $db = new mysqli($servername, $username, $password, $dbname);
+
 if($db->connect_errno > 0){
     die('Unable to connect to database [' . $db->connect_error . ']');
 }
-echo 'Succesfull Connection' . '<br />';
+
 $authID = $_POST['authID'];
 $AFirst = $_POST['AFirst'];
 $ALast = $_POST['ALast'];
@@ -20,12 +23,14 @@ $sql = <<<SQL
     INSERT INTO author (authID, AFirst, ALast, Abirthdate)
     VALUES($authID, '$AFirst', '$ALast', '$Abirthdate');
 SQL;
+
 if(!$result = $db->query($sql)){
     die('There was an error running the query [' . $db->error . ']');
 }
-while($row = $result->fetch_assoc()){
-    echo $row['authID'] . '<br />';
-}
-echo 'Total results: ' . $result->num_rows;
-echo 'Affected Rows: ' . $result->affected_rows;
 ?>
+<script>
+    alert("Succesfull Insertion");
+    window.location = 'insert_author.html';
+</script>
+</body>
+</html>

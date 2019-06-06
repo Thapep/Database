@@ -1,17 +1,17 @@
+<html>
+<body>
+
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "hmysqlg@m31";
 $dbname = "mydb";
 
-echo 'Hello World!' . '<br />';
-
 $db = new mysqli($servername, $username, $password, $dbname);
 
 if($db->connect_errno > 0){
     die('Unable to connect to database [' . $db->connect_error . ']');
 }
-echo 'Succesfull Connection' . '<br />';
 
 $sql_search = '';
 $sql_replace = '';
@@ -73,31 +73,19 @@ if ($sql_replace == ''){
 }
 $sql_replace = substr($sql_replace, 0, -2);
 
-
-//echo $sql_search . '<br />' . $sql_replace . '<br />';
-
 $sql = '
 UPDATE Book
 SET ' . $sql_replace . '
 WHERE ' . $sql_search . ';
 ';
 
-//echo 'THE STATEMENT: ' . $sql . '<br />';
-
 if(!$result = $db->query($sql)){
     die('There was an error running the query [' . $db->error . ']');
 }
-
-echo 'All good!<br />';
-
-// while($row = $result->fetch_assoc()){
-
-//     echo $row['pubYear'] . 'Bro<br />';
-// }
-
-
-
-echo 'Affected Rows: ' . $result->affected_rows;
-
-
 ?>
+<script>
+    alert("Succesfull Update");
+    window.location = 'update_Book.html';
+</script>
+</body>
+</html>
