@@ -72,7 +72,7 @@
 
         <div class="container">
             <h2>Book Insertion</h2>
-            <form  id="myform" class="form-horizontal" method='post'>
+            <form  id="myform" class="form-horizontal" action="insert_Book.php" method='post'>
                 Insert new book! You must fill all fields!<br />
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="ISBN">ISBN:</label>
@@ -107,13 +107,13 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="authID">Author ID:</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="authID" id="authID" placeholder="Enter Publisher Name">
+                      <input type="text" class="form-control" name="authID" id="authID" placeholder="Enter Author ID">
                     </div>
                 </div>
                 <div>If the author is not yet on the system, go insert him <a href="insert_author.html">HERE</a></div>
                 <div class="form-group">        
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default" onclick="result()">Submit</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
                     </div>
                 </div>
             </form>

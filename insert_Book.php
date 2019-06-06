@@ -27,18 +27,22 @@ if ($ISBN == NULL or $pubYear == NULL or $numpages == NULL or '$title' == NULL o
     die('Please fill all the fields');
 }
 
-$sql = <<<SQL
+$sql1 = <<<SQL
     INSERT INTO Book (ISBN, title, pubYear, numpages, pubName)
     VALUES($ISBN, '$title', $pubYear, $numpages, '$pubName');
-
-    INSERT INTO written_by (ISBN, authID)
-    VALUES($ISBN, $authID)
 SQL;
 
-if(!$result = $db->query($sql)){
+$sql2 =<<<SQL
+    INSERT INTO written_by (ISBN, authID)
+    VALUES($ISBN, $authID);
+SQL;
+
+if(!$result = $db->query($sql1)){
     die('There was an error running the query [' . $db->error . ']');
 }
-
+if(!$result = $db->query($sql2)){
+    die('There was an error running the query [' . $db->error . ']');
+}
 while($row = $result->fetch_assoc()){
     echo $row['title'] . '<br />';
 }
