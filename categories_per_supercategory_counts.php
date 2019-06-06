@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost"; 
 $username = "root";
-$password = "SelectedAgainst";
+$password = "hmysqlg@m31";
 $dbname = "mydb";
 
 echo 'Hello World!' . '<br />';
@@ -16,10 +16,10 @@ echo 'Succesfull Connection' . '<br />';
 //$user_input =  $_POST['user_input'];
 
 $sql = '
-SELECT written_by.ISBN Book.title author.AFirst author.ALast FROM written_by
-LEFT JOIN Book ON Book.ISBN=written_by.ISBN
-LEFT JOIN author ON author.authID=written_by.authID
-ORDER BY pubYear ASC;
+SELECT supercategoryName as \'Name\', COUNT(supercategoryName) as \'Quantity\'
+FROM category
+WHERE supercategoryName IS NOT NULL
+GROUP BY supercategoryName
 ';
 
 if(!$result = $db->query($sql)){
@@ -27,7 +27,7 @@ if(!$result = $db->query($sql)){
 }
 
 echo 'All good!<br />';
-
+echo 'Name, Quantity' . '<br />';
 while($row = $result->fetch_assoc()){
-    echo $row['title'] . ' ' . $row['ISBN'] . '<br />';
+    echo $row['Name'] . ' ' . $row['Quantity'] . '<br />';
 }
